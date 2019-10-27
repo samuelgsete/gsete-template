@@ -19,12 +19,10 @@ mat-menu {
 }
 
 .content {
-  height: 100%;
-  width: 100%;
+  
   background-color: #c2cecb;
   overflow-x: hidden;
   mat-drawer-container {
-    height: 100%;
     position: absolute;
     z-index: 99999;
     mat-drawer {
@@ -52,13 +50,10 @@ mat-menu {
   }
   .header {
     background-color: #11a182;
-    height: 40%;
     mat-toolbar {
       background-color: #34b499;
       position: fixed;
       z-index: 9999;
-      height: 10%;
-      padding: 0;
       mat-toolbar-row {
         color: #ffffff;
         height: 100%;
@@ -77,10 +72,10 @@ mat-menu {
           mat-button-toggle {
             background-color: #34b499;
             border-width: 0;
-            span {
+            span.user {
               color:#e5eceb;
-              font-size: 16px;
-              margin-left: 4px;
+              font-size: 15px;
+              margin: 0px 8px 0px 8px;
             }
             mat-icon {
               color:#e5eceb;
@@ -91,14 +86,9 @@ mat-menu {
     }    
   }
   div.flex {
-    height: 110%;
-    width: 80%;
     margin: 0 auto;
     mat-card {
       z-index: 999;
-      height: 90%;
-      width: 100%;
-      margin-top: -10%;
     }
   }
   div.footer {
@@ -110,16 +100,132 @@ mat-menu {
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 600px) {
+/* Desktop grande */
+@media (min-width: 1200px) {
   .content {
+    height: 100%;
+    width: 100%;
+    mat-drawer-container {
+      height: 100%;
+    }
     .header {
+      height: 40%;
       mat-toolbar {
-        .account {
-          img, span {
-            display: none;
+        height: 10%;
+        padding: 0;
+        mat-toolbar-row {
+          height: 100%;
+        }
+      }
+    }
+    .flex {
+      height: 110%;
+      width: 80%;
+      margin: 0 auto;
+      mat-card {
+        height: 90%;
+        width: 100%;
+        margin-top: -10%;
+      }
+    }
+  }
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .content {
+    height: 100%;
+    width: 100%;
+    mat-drawer-container {
+      height: 100%;
+    }
+    .header {
+      height: 30%;
+      mat-toolbar {
+        height: 10%;
+        padding: 0;
+        mat-toolbar-row {
+          height: 100%;
+        }
+      }
+    }
+    .flex {
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+      mat-card {
+        height: 90%;
+        width: 100%;
+        margin-top: -6%;
+      }
+    }
+  }
+}
+
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) {
+  .content {
+    height: 100%;
+    width: 100%;
+    mat-drawer-container {
+      height: 100%;
+    }
+    .header {
+      height: 30%;
+      mat-toolbar {
+        height: 10%;
+        padding: 0;
+        mat-toolbar-row {
+          height: 100%;
+        }
+      }
+    }
+    .flex {
+      height: 100%;
+      width: 90%;
+      margin: 0 auto;
+      mat-card {
+        height: 90%;
+        width: 100%;
+        margin-top: -8%;
+      }
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .content {
+    height: 100%;
+    width: 100%;
+    mat-drawer-container {
+      height: 100%;
+    }
+    .header {
+      height: 20%;
+      mat-toolbar {
+        height: 10%;
+        padding: 0;
+        mat-toolbar-row {
+          height: 100%;
+          mat-button-toggle-group {
+            mat-button-toggle {
+              span.user, mat-icon {
+                display: none;
+              }
+            }
           }
         }
+      }
+    }
+    .flex {
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      mat-card {
+        height:100%;
+        width: 100%;
+        margin-top: -10%;
       }
     }
   }
