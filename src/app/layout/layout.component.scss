@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;;
+}
+
+/* Barra de rolagem invisivel */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.no-outline {
+  outline: none;
+}
+
+mat-menu {
+  button:focus {
+    outline: none;
+  }
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  background-color: #c2cecb;
+  overflow-x: hidden;
+  mat-drawer-container {
+    height: 100%;
+    position: absolute;
+    z-index: 99999;
+    mat-drawer {
+      width: 240px;
+      img {
+        cursor: pointer;
+        margin: 2% 10% 1%;
+      }
+      span {
+        margin-left: -6%;
+        letter-spacing: 3px;
+        color:#b80b5b;
+        cursor:pointer;
+      }
+      mat-list {
+        mat-list-item {
+          cursor: pointer;
+        }
+        mat-list-item:hover {
+          background-color: #f8d9e7;
+          color: #db1873;
+        }
+      }
+    }
+  }
+  .header {
+    background-color: #11a182;
+    height: 40%;
+    mat-toolbar {
+      background-color: #34b499;
+      position: fixed;
+      z-index: 9999;
+      height: 10%;
+      padding: 0;
+      mat-toolbar-row {
+        color: #ffffff;
+        height: 100%;
+        span.logo {
+          letter-spacing: 3px;
+          margin-left: 9px;
+        }
+        span.example-spacer {
+          flex: 1 1 auto;
+        }
+        button:focus {
+          outline: 0;
+        }
+        mat-button-toggle-group {
+          border-width: 0;
+          mat-button-toggle {
+            background-color: #34b499;
+            border-width: 0;
+            span {
+              color:#e5eceb;
+              font-size: 16px;
+              margin-left: 4px;
+            }
+            mat-icon {
+              color:#e5eceb;
+            }
+          }
+        }
+      }
+    }    
+  }
+  div.flex {
+    height: 110%;
+    width: 80%;
+    margin: 0 auto;
+    mat-card {
+      z-index: 999;
+      height: 90%;
+      width: 100%;
+      margin-top: -10%;
+    }
+  }
+  div.footer {
+    background-color:  #e2ebe9;
+    padding: 2%;
+    p {
+      color: #036953;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .content {
+    .header {
+      mat-toolbar {
+        .account {
+          img, span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

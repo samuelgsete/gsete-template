@@ -1,0 +1,58 @@
+<div class="content">
+  <mat-drawer-container class="example-containerd" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <img src="/assets/img/logotipo.png" (click)="drawer.toggle()" width="36px" height="36px" alt="logotipo">
+      <span (click)="drawer.toggle()">GSETE</span>
+      <mat-list>
+        <h3 mat-subheader>samuelgsete@gmail.com</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let i of r.rotas"  matRipple [matRippleColor]="myColor" (click)="drawer.toggle()">
+          <mat-icon mat-list-icon>{{i.icon}}</mat-icon>
+          <h4 mat-line>{{i.label}}</h4>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    </mat-drawer-container>
+  <div class="header">
+    <mat-toolbar class="toolbar shadow-sm rounded">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <img src="/assets/img/logotipo.png" width="48px" height="48px" alt="logotipo">
+        <span class="logo" >GSETE</span>
+        <span class="example-spacer"></span>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle value="bold" [matMenuTriggerFor]="menu">
+            <img src="/assets/img/membro.png" width="42px" height="42px">
+            <span>Samuel Souza</span>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="italic"><mat-icon>search</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <div class="flex" (click)="drawer.toggle()">
+    <mat-card class="shadow p-3 mb-5 bg-white rounded">
+      <router-outlet></router-outlet>
+    </mat-card>
+  </div>
+  <div class="footer" (click)="drawer.toggle()">
+    <p class="text-center">&copy; 2019 Todos os direitos autorais estão reservados</p>
+  </div>
+</div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="no-outline">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+  <button mat-menu-item class="no-outline">
+      <mat-icon>person</mat-icon>
+      <span>Perfil</span>
+    </button>
+  <button mat-menu-item class="no-outline">
+    <mat-icon>build</mat-icon>
+    <span>configurações</span>
+  </button>
+</mat-menu>
